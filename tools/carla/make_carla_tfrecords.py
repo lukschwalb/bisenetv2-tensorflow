@@ -19,7 +19,7 @@ def generate_tfrecords():
 
     :return:
     """
-    io = carla_tf_io.CityScapesTfIO()
+    io = carla_tf_io.CarlaTfIO()
     io.writer.write_tfrecords()
 
     return

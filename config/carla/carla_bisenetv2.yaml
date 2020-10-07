@@ -24,12 +24,12 @@ AUG:
         SATURATION_JITTER_RATIO: 0.5
 DATASET:
     #DATA_DIR: '/PATH/IMAGE_SCENE_SEGMENTATION/CITYSPACES'
-    DATA_DIR: '/home/luk/datasets/carla/04-10-town02-ss'
+    DATA_DIR: '/home/jovyan/datasets/carla/04-10-town02-ss'
     IMAGE_TYPE: 'rgb'  # choice rgb or rgba
     NUM_CLASSES: 13
-    TEST_FILE_LIST: '/home/luk/datasets/carla/04-10-town02-ss/image_file_index/test.txt'
-    TRAIN_FILE_LIST: '/home/luk/datasets/carla/04-10-town02-ss/image_file_index/train.txt'
-    VAL_FILE_LIST: '/home/luk/datasets/carla/04-10-town02-ss/image_file_index/val.txt'
+    TEST_FILE_LIST: '/home/jovyan/datasets/carla/04-10-town02-ss/image_file_index/test.txt'
+    TRAIN_FILE_LIST: '/home/jovyan/datasets/carla/04-10-town02-ss/image_file_index/train.txt'
+    VAL_FILE_LIST: '/home/jovyan/datasets/carla/04-10-town02-ss/image_file_index/val.txt'
     IGNORE_INDEX: 255
     PADDING_VALUE: [127.5, 127.5, 127.5]
     MEAN_VALUE: [0.5, 0.5, 0.5]
@@ -56,7 +56,7 @@ TRAIN:
     SNAPSHOT_EPOCH: 8
     BATCH_SIZE: 16
     VAL_BATCH_SIZE: 4
-    EPOCH_NUMS: 905
+    EPOCH_NUMS: 500
     WARM_UP:
         ENABLE: True
         EPOCH_NUMS: 8
