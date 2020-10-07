@@ -16,10 +16,11 @@ time1 = 0
 
 LABEL_CONTOURS = [(0, 0, 0),  # 0=None
                   # 1=Buildings , 2=Fences, 3=Other, 4=Pedestrians, 5=Poles
-                  (128, 0, 0), (0, 128, 0), (128, 128, 0), (0, 0, 128), (128, 0, 128),
+                  (70, 70, 70), (190, 153, 153), (250, 170, 160), (220, 20, 60), (153, 153, 153),
                   # 6=RoadLines, 7=Roads, 8=Sidewalks, 9=Vegetation, 10=Vehicles
-                  (0, 128, 128), (128, 128, 128), (64, 0, 0), (192, 0, 0), (64, 128, 0),
+                  (157, 234, 50), (128, 64, 128), (244, 35, 232), (107, 142, 35), (0, 0, 142),
                   # 11=Walls, 12=TrafficSigns
+                  (102, 102, 156), (220, 220, 0)]
 
 def decode_prediction_mask(mask):
     mask_shape = mask.shape
@@ -40,13 +41,13 @@ if __name__ == '__main__':
     parser.add_argument('--vidfps', type=int, default=30, help='FPS of Video. (Default=30)')
     args = parser.parse_args()
 
-    deep_model    = args.deep_model
+    model    = args.model
     video_file    = args.video_file
     video_file    = args.video_file
     vidfps        = args.vidfps
 
     devices = edgetpu_utils.ListEdgeTpuPaths(edgetpu_utils.EDGE_TPU_STATE_UNASSIGNED)
-    engine = BasicEngine(model_path=deep_model, device_path=devices[0])
+    engine = BasicEngine(model_path=model, device_path=devices[0])
     model_height = engine.get_input_tensor_shape()[1]
     model_width  = engine.get_input_tensor_shape()[2]
 
